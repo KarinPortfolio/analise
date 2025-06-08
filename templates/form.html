@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}Análise de Signos{% endblock %} {%
+block content %}
+<form method="POST" action="/submit">
+  <h2>Qual a relação entre signo do zodíaco e a duração do relacionamento?</h2>
+  <h5>(obs. Estudo sem nenhuma base científica, apenas para se divertir!)</h5>
+  <p>
+    Será que as estrelas realmente ditam o destino do amor? 😉 Conta pra gente
+    seu signo, o da sua 'cara-metade' e há quantos dias o cupido acertou (ou
+    errou miseravelmente) 💘.
+  </p>
+
+  <label for="signo1">Seu signo:</label>
+  <select name="signo1" id="signo1" required>
+    <option value="">Selecione</option>
+    {% for signo in signos %}
+    <option value="{{ signo }}">{{ signo }}</option>
+    {% endfor %}
+  </select>
+
+  <label for="signo2">Signo da sua cara-metade:</label>
+  <select name="signo2" id="signo2" required>
+    <option value="">Selecione</option>
+    {% for signo in signos %}
+    <option value="{{ signo }}">{{ signo }}</option>
+    {% endfor %}
+  </select>
+
+  <label for="duracao">Duração (dias):</label>
+  <input
+    type="number"
+    id="duracao"
+    name="duracao"
+    min="1"
+    max="36525"
+    required
+  />
+
+  <input type="submit" value="Enviar" />
+</form>
+<p><a href="/analise">Ver Análise das Relações</a></p>
+{% endblock %}

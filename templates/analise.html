@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %}Resultado da Análise de Relações{%
+endblock %} {% block content %}
+<h2>Análise das Relações</h2>
+{% if not dados %}
+<p>Nenhum dado coletado ainda.</p>
+{% else %}
+<p>
+  <b>Combinação que durou mais tempo:</b> {{ maior_combinacao }} com {{
+  maior_duracao }} dias
+</p>
+<p>
+  <b>Combinação que durou menos tempo:</b> {{ menor_combinacao }} com {{
+  menor_duracao }} dia(s)
+</p>
+<p><b>Média geral de duração:</b> {{ media_geral_formatada }} dias</p>
+<img
+  src="data:image/png;base64,{{ grafico_url }}"
+  alt="Gráfico da Soma Total da Duração por Combinação de Signos"
+/>
+{% endif %}
+<br /><a href="/">Voltar</a> {% endblock %}

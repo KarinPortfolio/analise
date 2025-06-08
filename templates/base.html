@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../static/favicon.ico" type="image/x-icon" />
+
+    <title>
+      {% block title %}Qual a Correlação Entre Signo do Zodíaco e Duração do
+      Relacionamento? (Análise Bem-Humorada){% endblock %}
+    </title>
+    <style>
+      body {
+        font-family: sans-serif; /* Simplificado */
+        background: #ffe6f0;
+        color: #5a3e4c;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background: #fff0f6;
+        padding: 20px; /* Simplificado */
+        border-radius: 8px; /* Simplificado */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Simplificado */
+        width: 90%;
+        max-width: 600px; /* Ajustado */
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 15px; /* Simplificado */
+        color: #a64d79;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px; /* Simplificado */
+        font-weight: bold; /* Simplificado */
+      }
+      select,
+      input[type="number"] {
+        width: calc(100% - 20px); /* Ajuste para padding */
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #f7c6d0;
+        border-radius: 4px;
+        background: #fff; /* Simplificado */
+        font-size: 1em;
+      }
+      input[type="submit"] {
+        background: #d87cae;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 1.1em;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background: #b85b88;
+      }
+      .flash {
+        color: #c0392b;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+      }
+      a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 15px;
+        background: #d87cae;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      a:hover {
+        background: #b85b88;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <div class="flash">
+        {% for message in messages %} {{ message }}<br />
+        {% endfor %}
+      </div>
+      {% endif %} {% endwith %} {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
