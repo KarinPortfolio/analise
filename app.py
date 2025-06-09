@@ -87,7 +87,7 @@ def submit():
         return redirect(url_for('index'))
 
     flash("Dados salvos com sucesso!")
-    return redirect(url_for('index'))
+    return redirect(url_for('analise'))
 
 @app.route('/analise')
 def analise():
